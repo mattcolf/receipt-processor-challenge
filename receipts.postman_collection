@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "8eff115b-b05c-46a5-a7f6-a3aed53546a6",
+		"name": "Receipts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19761"
+	},
+	"item": [
+		{
+			"name": "/status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOSTNAME}}:{{API_PORT}}/status",
+					"protocol": "http",
+					"host": [
+						"{{API_HOSTNAME}}"
+					],
+					"port": "{{API_PORT}}",
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/receipts/process",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "foo",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"retailer\": \"Best Buy\",\r\n    \"purchaseDate\": \"2025-02-10\",\r\n    \"purchaseTime\": \"16:05\",\r\n    \"items\": [\r\n        {\r\n            \"shortDescription\": \"Apple Macbook Pro\",\r\n            \"price\": \"1990.00\"\r\n        },\r\n        {\r\n            \"shortDescription\": \"GE Smart Oven\",\r\n            \"price\": \"499.00\"\r\n        },\r\n        {\r\n            \"shortDescription\": \"Monitor\",\r\n            \"price\": \"399.99\"\r\n        }\r\n    ],\r\n    \"total\": \"2888.99\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{API_HOSTNAME}}:{{API_PORT}}/receipts/process",
+					"protocol": "http",
+					"host": [
+						"{{API_HOSTNAME}}"
+					],
+					"port": "{{API_PORT}}",
+					"path": [
+						"receipts",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/receipts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOSTNAME}}:{{API_PORT}}/receipts",
+					"protocol": "http",
+					"host": [
+						"{{API_HOSTNAME}}"
+					],
+					"port": "{{API_PORT}}",
+					"path": [
+						"receipts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/receipts/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOSTNAME}}:{{API_PORT}}/receipts/392abbcf-4783-49f4-901c-ae0c708783df",
+					"protocol": "http",
+					"host": [
+						"{{API_HOSTNAME}}"
+					],
+					"port": "{{API_PORT}}",
+					"path": [
+						"receipts",
+						"392abbcf-4783-49f4-901c-ae0c708783df"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/receipts/{id}/points",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{API_HOSTNAME}}:{{API_PORT}}/receipts/392abbcf-4783-49f4-901c-ae0c708783df/points",
+					"protocol": "http",
+					"host": [
+						"{{API_HOSTNAME}}"
+					],
+					"port": "{{API_PORT}}",
+					"path": [
+						"receipts",
+						"392abbcf-4783-49f4-901c-ae0c708783df",
+						"points"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_HOSTNAME",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"key": "API_PORT",
+			"value": "8080",
+			"type": "string"
+		}
+	]
+}
